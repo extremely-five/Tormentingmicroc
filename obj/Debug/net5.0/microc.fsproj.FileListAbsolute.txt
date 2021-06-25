@@ -1,0 +1,35 @@
+c:\Users\DZ\Downloads\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\microc.AssemblyInfoInputs.cache
+c:\Users\DZ\Downloads\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\microc.AssemblyInfo.fs
+c:\Users\DZ\Downloads\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\microc.fsproj.CoreCompileInputs.cache
+c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\microc.AssemblyInfoInputs.cache
+c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\microc.AssemblyInfo.fs
+c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\microc.fsproj.CoreCompileInputs.cache
+c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\microc.AssemblyInfoInputs.cache
+c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\microc.AssemblyInfo.fs
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\microc.exe
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\microc.deps.json
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\microc.runtimeconfig.json
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\microc.runtimeconfig.dev.json
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\microc.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\microc.pdb
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\FSharp.Core.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\FsLexYacc.Runtime.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\cs\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\de\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\es\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\fr\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\it\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\ja\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\ko\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\pl\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\pt-BR\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\ru\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\tr\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\zh-Hans\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\bin\Debug\net5.0\zh-Hant\FSharp.Core.resources.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\microc.fsproj.AssemblyReference.cache
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\microc.fsproj.CopyComplete
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\microc.dll
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\microc.pdb
+C:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\microc.genruntimeconfig.cache
+c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\microc.fsproj.CoreCompileInputs.cache
