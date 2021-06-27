@@ -1,9 +1,0 @@
-c:\Users\DZ\Downloads\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\interpc.AssemblyInfoInputs.cache
-c:\Users\DZ\Downloads\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\interpc.AssemblyInfo.fs
-c:\Users\DZ\Downloads\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\interpc.fsproj.CoreCompileInputs.cache
-c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\interpc.AssemblyInfoInputs.cache
-c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\interpc.AssemblyInfo.fs
-c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master (1)\plzoofs\microc\obj\Debug\net5.0\interpc.fsproj.CoreCompileInputs.cache
-c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\interpc.AssemblyInfoInputs.cache
-c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\interpc.AssemblyInfo.fs
-c:\Users\DZ\Desktop\编译原理\31801117-柴晨培-lec.final.ref.proj\sigcc-plzoofs-master\plzoofs\microc\obj\Debug\net5.0\interpc.fsproj.CoreCompileInputs.cache

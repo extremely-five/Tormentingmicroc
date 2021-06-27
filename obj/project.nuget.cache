@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i0v1Ak8xUspuTpX2eJHo9pUQ1N2OWOC6yrrUBmdx/ID8sTYBxPt+mYj9h/SDkj323E6b6PYwRNHByGxzTgl/Pw==",
+  "dgSpecHash": "4D9iRHPO/sYlEqa4NJNy57qj/PLmaRgG6YIEB7EAeZNJzaeWBZn0cfcVpLOxxtpw/vUSyDt0/K2vnG1aiMYDvw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec.final.ref.proj\\sigcc-plzoofs-master\\plzoofs\\microc\\microcc.fsproj",
+  "projectFilePath": "C:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec\\microc\\microcc.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\DZ\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
     "C:\\Users\\DZ\\.nuget\\packages\\fslexyacc\\10.0.0\\fslexyacc.10.0.0.nupkg.sha512",

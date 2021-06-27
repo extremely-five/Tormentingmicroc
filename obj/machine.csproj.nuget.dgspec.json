@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec.final.ref.proj\\sigcc-plzoofs-master (1)\\plzoofs\\microc\\machine.csproj": {}
+    "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec\\microc\\machine.csproj": {}
   },
   "projects": {
-    "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec.final.ref.proj\\sigcc-plzoofs-master (1)\\plzoofs\\microc\\machine.csproj": {
+    "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec\\microc\\machine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec.final.ref.proj\\sigcc-plzoofs-master (1)\\plzoofs\\microc\\machine.csproj",
+        "projectUniqueName": "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec\\microc\\machine.csproj",
         "projectName": "machine",
-        "projectPath": "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec.final.ref.proj\\sigcc-plzoofs-master (1)\\plzoofs\\microc\\machine.csproj",
+        "projectPath": "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec\\microc\\machine.csproj",
         "packagesPath": "C:\\Users\\DZ\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec.final.ref.proj\\sigcc-plzoofs-master (1)\\plzoofs\\microc\\obj\\",
+        "outputPath": "c:\\Users\\DZ\\Desktop\\编译原理\\31801117-柴晨培-lec\\microc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
