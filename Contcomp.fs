@@ -181,24 +181,65 @@ let makeGlobalEnvs(topdecs : topdec list) : VarEnv * FunEnv * instr list =
 
 (* Compiling micro-C statements:
 
-   * stmt    is the statement to compile
-   * varenv  is the local and global variable environment 
-   * funEnv  is the global function environment
-   * C       is the code that follows the code for stmt
+   * stmt是要编译的语句
+   * varEnv是局部和全局变量环境
+   * funEnv是全局函数环境
+   * C       is the code that follows the code for stmt(* C是stmt代码编译后的代码*)
 *)
 
 let rec cStmt stmt (varEnv : VarEnv) (funEnv : FunEnv) (C : instr list) : instr list = 
     match stmt with
+    //编译的stmt：if
     | If(e, stmt1, stmt2) -> 
       let (jumpend, C1) = makeJump C
       let (labelse, C2) = addLabel (cStmt stmt2 varEnv funEnv C1)
       cExpr e varEnv funEnv (IFZERO labelse 
        :: cStmt stmt1 varEnv funEnv (addJump jumpend C2))
+     //编译的stmt：while
     | While(e, body) ->
       let labbegin = newLabel()
       let (jumptest, C1) = 
            makeJump (cExpr e varEnv funEnv (IFNZRO labbegin :: C))
       addJump jumptest (Label labbegin :: cStmt body varEnv funEnv C1)
+    | DoWhile (body,e) ->
+      let labbegin = newLabel()
+      let C1 =
+          cExpr e varEnv funEnv (IFNZRO labbegin :: C)
+      Label labbegin :: cStmt body varEnv funEnv C1//优先执行body
+    | Switch(e,cases)   ->
+        let (labend, C1) = addLabel C
+        let rec everycase c  = 
+            match c with
+            | [Case(cond,body)] -> 
+                let (label,C2) = addLabel(cStmt body varEnv funEnv  C1 )
+                let (label2, C3) = addLabel( cExpr (Prim2 ("==",e,cond)) varEnv funEnv  (IFZERO labend :: C2))
+                (label,label2,C3)
+            | Case(cond,body) :: tr->
+                let (labnextbody,labnext,C2) = everycase tr
+                let (label, C3) = addLabel(cStmt body varEnv funEnv (addGOTO labnextbody C2))
+                let (label2, C4) = addLabel( cExpr (Prim2 ("==",e,cond)) varEnv funEnv  (IFZERO labnext :: C3))
+                (label,label2,C4)
+            | Default( body ) :: tr -> 
+                let (labnextbody,labnext,C2) = everycase tr
+                let (label, C3) = addLabel(cStmt body varEnv funEnv  (addGOTO labnextbody C2))
+                let (label2, C4) = addLabel(cExpr (Prim2 ("==",e,e)) varEnv funEnv (IFZERO labnext :: C3))
+                (label,label2,C4)
+            | [] -> (labend, labend,C1)
+        let (label,label2,C2) = everycase cases
+        C2
+    | Case(cond,body)  ->
+        C
+    |  For(dec, e, opera,body) ->
+        let labend   = newLabel()                       //结束label
+        let labbegin = newLabel()                       //设置label 
+        let labope   = newLabel()                       //设置 for(,,opera) 的label
+        // let lablist = labend :: labope :: lablist
+        let Cend = Label labend :: C
+        let (jumptest, C2) =                                                
+            makeJump (cExpr e varEnv funEnv (IFNZRO labbegin :: Cend)) 
+        let C3 = Label labope :: cExpr opera varEnv funEnv  (addINCSP -1 C2)
+        let C4 = cStmt body varEnv funEnv  C3    
+        cExpr dec varEnv funEnv (addINCSP -1 (addJump jumptest  (Label labbegin :: C4) ) ) //dec Label: body  opera  testjumpToBegin 指令的顺序  
     | Expr e -> 
       cExpr e varEnv funEnv (addINCSP -1 C) 
     | Block stmts -> 
@@ -251,6 +292,27 @@ and cExpr (e : expr) (varEnv : VarEnv) (funEnv : FunEnv) (C : instr list) : inst
     | CstI i         -> addCST i C
     | ConstFloat i   -> addCSTF i C
     | Addr acc       -> cAccess acc varEnv funEnv C
+    | Spsm(acc,ope,e)->
+        cExpr e varEnv funEnv
+            (match ope with
+            | "+" -> 
+                let ass = Assign (acc,Prim2("+",Access acc, e))
+                let C1 = cExpr ass varEnv funEnv  (CSTI 1 :: SUB :: C)
+                (addINCSP -1 C1)
+            | "-" ->
+                let ass = Assign (acc,Prim2("-",Access acc, e))
+                let C1 = cExpr ass varEnv funEnv  (CSTI 1 :: ADD :: C)
+                (addINCSP -1 C1)
+            | "+A" -> 
+                let ass = Assign (acc,Prim2("+",Access acc, e))
+                let C1 = cExpr ass varEnv funEnv  C
+                CSTI 1 :: ADD :: (addINCSP -1 C1)
+            | "-A" ->
+                let ass = Assign (acc,Prim2("-",Access acc, e))
+                let C1 = cExpr ass varEnv funEnv  C
+                CSTI 1 :: SUB :: (addINCSP -1 C1)
+            | _         -> failwith "Error: unknown unary operator")
+    //单目运算
     | Prim1(ope, e1) ->
       cExpr e1 varEnv funEnv
           (match ope with
@@ -258,6 +320,7 @@ and cExpr (e : expr) (varEnv : VarEnv) (funEnv : FunEnv) (C : instr list) : inst
            | "printi" -> PRINTI :: C
            | "printc" -> PRINTC :: C
            | _        -> failwith "unknown primitive 1")
+    //双目运算
     | Prim2(ope, e1, e2) ->
       cExpr e1 varEnv funEnv
         (cExpr e2 varEnv funEnv
@@ -274,6 +337,12 @@ and cExpr (e : expr) (varEnv : VarEnv) (funEnv : FunEnv) (C : instr list) : inst
             | ">"   -> SWAP :: LT :: C
             | "<="  -> SWAP :: LT :: addNOT C
             | _     -> failwith "unknown primitive 2"))
+    // 三目运算
+    | Prim3(cond, e1, e2)    ->
+        let (jumpend, C1) = makeJump C
+        let (labelse, C2) = addLabel (cExpr e2 varEnv funEnv  C1)
+        cExpr cond varEnv funEnv  (IFZERO labelse :: cExpr e1 varEnv funEnv  (addJump jumpend C2))
+    //与
     | Andalso(e1, e2) ->
       match C with
       | IFZERO lab :: _ ->
