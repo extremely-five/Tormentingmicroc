@@ -18,15 +18,16 @@ let nl = CstI 10 //  \n 的 ASCII 码
 %token <float32> CSTFLOAT
 %token <string> CSTSTRING NAME
 
-%token CHAR ELSE IF INT FLOAT NULL PRINT PRINTLN RETURN VOID WHILE
+%token CHAR ELSE IF INT FLOAT NULL PRINT PRINTLN RETURN VOID WHILE DO FOR SWITCH CASE DEFAULT
 %token PLUS MINUS TIMES DIV MOD
 %token EQ NE GT LT GE LE
 %token NOT SEQOR SEQAND
-%token LPAR RPAR LBRACE RBRACE LBRACK RBRACK SEMI COMMA ASSIGN AMP
+%token LPAR RPAR LBRACE RBRACE LBRACK RBRACK SEMI COMMA ASSIGN AMP COLON QUEST
 %token EOF
 
 %right ASSIGN             /* lowest precedence */  // 最下面的优先级最高
 %nonassoc PRINT
+%right QUEST COLON/*? :*/
 %left SEQOR
 %left SEQAND
 %left EQ NE 
@@ -137,12 +138,21 @@ StmtM:  /* No unbalanced if-else */
   | Block                               { $1                   }
   | IF LPAR Expr RPAR StmtM ELSE StmtM  { If($3, $5, $7)       }
   | WHILE LPAR Expr RPAR StmtM          { While($3, $5)        }
+  | DO StmtM WHILE LPAR Expr RPAR SEMI  { DoWhile($2, $5)      }
+  | FOR LPAR Expr SEMI Expr SEMI Expr RPAR StmtM     { For($3,$5,$7,$9)  }
+  | SWITCH LPAR Expr RPAR LBRACE StmtCase RBRACE        { Switch($3,$6)  }
+;
+StmtCase:
+    CASE AtExprNotAccess COLON StmtM               { [Case($2,$4)]    }  
+  | CASE AtExprNotAccess COLON StmtM StmtCase      { Case($2,$4) :: $5}
+  | DEFAULT COLON StmtM                            { [Default($3)]}
 ;
 
 StmtU:
     IF LPAR Expr RPAR StmtM ELSE StmtU  { If($3, $5, $7)       }
   | IF LPAR Expr RPAR Stmt              { If($3, $5, Block []) }
   | WHILE LPAR Expr RPAR StmtU          { While($3, $5)        }
+  | DO StmtU WHILE LPAR Expr RPAR SEMI  { DoWhile($2,$5)}
 ;
 
 Expr: 
