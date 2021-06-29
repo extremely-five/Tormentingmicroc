@@ -633,18 +633,6 @@ let _fsyacc_reductions ()  =    [|
                    )
 # 119 "CPar.fsy"
                  : 'gentype_Block));
-# 1035 "CPar.fs"
-        (fun (parseState : FSharp.Text.Parsing.IParseState) ->
-            let _2 = (let data = parseState.GetInput(2) in (Microsoft.FSharp.Core.Operators.unbox data : 'StmtM)) in
-            let _5 = (let data = parseState.GetInput(5) in (Microsoft.FSharp.Core.Operators.unbox data : 'Expr)) in
-            Microsoft.FSharp.Core.Operators.box
-                (
-                   (
-# 139 "CPar.fsy"
-                                                               DoWhile(_2, _5)      
-                   )
-# 139 "CPar.fsy"
-                 : 'StmtM));
 # 636 "CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box

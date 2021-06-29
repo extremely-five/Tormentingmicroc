@@ -199,6 +199,11 @@ let rec cStmt stmt (varEnv : VarEnv) (funEnv : FunEnv) (C : instr list) : instr 
       let (jumptest, C1) = 
            makeJump (cExpr e varEnv funEnv (IFNZRO labbegin :: C))
       addJump jumptest (Label labbegin :: cStmt body varEnv funEnv C1)
+    | DoWhile (body,e) ->
+      let labbegin = newLabel()
+      let C1 =
+          cExpr e varEnv funEnv (IFNZRO labbegin :: C)
+      Label labbegin :: cStmt body varEnv funEnv C1//优先执行body 
     | Expr e -> 
       cExpr e varEnv funEnv (addINCSP -1 C) 
     | Block stmts -> 
@@ -216,11 +221,6 @@ let rec cStmt stmt (varEnv : VarEnv) (funEnv : FunEnv) (C : instr list) : instr 
           | (BDec code,  varEnv) :: sr -> code @ pass2 sr C
           | (BStmt stmt, varEnv) :: sr -> cStmt stmt varEnv funEnv (pass2 sr C)
       pass2 stmtsback (addINCSP(snd varEnv - fdepthend) C)
-     | DoWhile(body, e) ->
-        let labbegin = newLabel()
-        let C1 = 
-            cExpr e varEnv funEnv  (IFNZRO labbegin :: C)
-        Label labbegin :: cStmt body varEnv funEnv  C1
     | Return None -> 
       RET (snd varEnv - 1) :: deadcode C
     | Return (Some e) -> 
